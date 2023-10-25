@@ -1,13 +1,5 @@
-const sign_in_btn = document.querySelector("#sign-in-btn");
-const sign_up_btn = document.querySelector("#sign-up-btn");
-const container = document.querySelector(".container");
-
-sign_up_btn.addEventListener('click', () =>{
-    container.classList.add("sign-up-mode");
-});
-
-sign_in_btn.addEventListener('click', () =>{
-    container.classList.remove("sign-up-mode");
-});
+import IndexModel from './model/IndexModel.js';
+import IndexController from './controller/IndexController.js';
+import IndexView from './view/IndexView.js';
 const index = new IndexController(new IndexModel(), new IndexView());
 index.init();

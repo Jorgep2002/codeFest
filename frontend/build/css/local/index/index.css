@@ -186,6 +186,7 @@ header {
 }
 
 .btn {
+  text-align: center;
   width: 150px;
   background: linear-gradient(-45deg, #fd064e 0%, #04befe 300%);
   border: none;
