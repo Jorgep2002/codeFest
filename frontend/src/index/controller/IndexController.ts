@@ -7,6 +7,7 @@ export default class IndexController {
   constructor (private readonly model: IndexModel, private readonly view: IndexView) {
     console.log('IndexController constructor')
     this.view.registrar(this.registrar);
+    this.view.logIn(this.logIn);
 
 
   }
@@ -14,7 +15,9 @@ export default class IndexController {
   registrar =(user:usersInterface):void=>{
     this.model.registrar(user)
   }
-
+  logIn = (user:usersInterface):void=>{
+    this.model.logIn(user)
+  }
   init = (): void => {
   }
 }

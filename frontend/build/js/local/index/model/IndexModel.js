@@ -23,10 +23,40 @@ export default class IndexModel {
                 };
                 const response = yield fetch(apiUrl, requestOptions);
                 if (!response.ok) {
+                    throw new Error('Datos invalidos');
+                }
+                const responseData = yield response.json();
+                alert(responseData.message);
+                return;
+            }
+            catch (error) {
+                console.error('Error:', error);
+                alert(error);
+                throw error;
+            }
+        });
+        this.logIn = (user) => __awaiter(this, void 0, void 0, function* () {
+            console.log(user, "LOG IN user  modelo");
+            console.log("MODELO LOG IN");
+            try {
+                const apiUrl = 'http://localhost:1802/users/login';
+                const requestOptions = {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(user),
+                };
+                const response = yield fetch(apiUrl, requestOptions);
+                if (!response.ok) {
                     throw new Error('La solicitud no se pudo completar');
                 }
                 const responseData = yield response.json();
                 alert(responseData.message);
+                console.log(response);
+                if (response.status === 200) {
+                    window.location.href = 'stream.html';
+                }
                 return;
             }
             catch (error) {

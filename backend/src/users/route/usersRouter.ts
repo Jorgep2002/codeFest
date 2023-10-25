@@ -11,6 +11,7 @@ export default class ProductsRouter {
 
   routes = (): void => {
     this.router.post('/users', this.usersController.storeUsers)
+    this.router.post('/users/login', this.usersController.logUser)
     this.router.get('*', this.usersController.controlError)
   }
 }

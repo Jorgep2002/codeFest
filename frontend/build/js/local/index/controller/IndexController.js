@@ -5,9 +5,13 @@ export default class IndexController {
         this.registrar = (user) => {
             this.model.registrar(user);
         };
+        this.logIn = (user) => {
+            this.model.logIn(user);
+        };
         this.init = () => {
         };
         console.log('IndexController constructor');
         this.view.registrar(this.registrar);
+        this.view.logIn(this.logIn);
     }
 }

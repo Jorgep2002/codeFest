@@ -17,5 +17,20 @@ export default class IndexView {
                 registrar(usuario);
             });
         };
+        this.logIn = (logIn) => {
+            const contraseñaLogin = document.getElementById("contraseñaLogin");
+            const emailLogin = document.getElementById("usuarioLogin");
+            const btnLogin = document.getElementById("btnLogin");
+            btnLogin.addEventListener("click", () => {
+                console.log("CLICK");
+                const contraseña = contraseñaLogin.value;
+                const email = emailLogin.value;
+                const usuario = {
+                    email,
+                    contraseña,
+                };
+                logIn(usuario);
+            });
+        };
     }
 }

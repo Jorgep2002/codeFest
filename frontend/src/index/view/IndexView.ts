@@ -26,6 +26,24 @@ export default class IndexView {
       registrar(usuario);
     });
   }
+  logIn = (logIn: (product: usersInterface) => void): void => {
+    const contraseñaLogin = document.getElementById("contraseñaLogin") as HTMLInputElement;
+    const emailLogin = document.getElementById("usuarioLogin") as HTMLInputElement;
+
+    const btnLogin = document.getElementById("btnLogin") as HTMLButtonElement;
+    btnLogin.addEventListener("click", () => {
+      console.log("CLICK")
+      const contraseña = contraseñaLogin.value;
+      const email = emailLogin.value;
+
+      const usuario: usersInterface = {
+        email,
+        contraseña,
+      };
+
+      logIn(usuario);
+    });
+  }
 }
   
 
