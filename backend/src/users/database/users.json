@@ -13,5 +13,20 @@
     "nombre": "Ejemplo Usuario 3",
     "email": "usuario3@example.com",
     "contraseña": "aweaweawe"
+  },
+  {
+    "nombre": "aweawe",
+    "email": "aweaw@gmail.com",
+    "contraseña": "Andre23231"
+  },
+  {
+    "nombre": "breyner",
+    "email": "breyner@gmail.com",
+    "contraseña": "Andres2002"
+  },
+  {
+    "nombre": "carlos",
+    "email": "Carlos@gmail.com",
+    "contraseña": "Andres2002"
   }
 ]

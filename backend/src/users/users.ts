@@ -1,6 +1,7 @@
 import express, { Application } from 'express'
 import path from 'path'
 import dotenv from 'dotenv'
+import cors from 'cors'
 
 import UsersRouter from './route/usersRouter'
 import UsersController from './controller/usersController'
@@ -19,6 +20,7 @@ class Server {
     dotenv.config({
       path: path.join(__dirname, '../../config/.env.development')
     })
+    this.users.use(cors())
     this.users.use(express.json())
     this.users.use(express.urlencoded({ extended: true }))
   }

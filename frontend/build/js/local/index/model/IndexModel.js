@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 export default class IndexModel {
     constructor() {
         this.registrar = (user) => __awaiter(this, void 0, void 0, function* () {
+            console.log(user, "usuario modelo");
             console.log("MODELO REGISTRO");
             try {
                 const apiUrl = 'http://localhost:1802/users';
@@ -25,11 +26,12 @@ export default class IndexModel {
                     throw new Error('La solicitud no se pudo completar');
                 }
                 const responseData = yield response.json();
-                console.log('Respuesta del servidor:', responseData);
+                alert(responseData.message);
                 return;
             }
             catch (error) {
                 console.error('Error:', error);
+                alert(error);
                 throw error;
             }
         });

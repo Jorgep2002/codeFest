@@ -31,7 +31,7 @@
               <i class="fas fa-lock"></i>
               <input type="password" placeholder="Contraseña" />
             </div>
-            <input  id="btnRegistro" value="Entrar" class="btn solid" />
+            <input  id="btnLogin" value="Entrar" class="btn solid" />
             <p class="social-text">O iniciar sesion usando redes sociales</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -52,17 +52,17 @@
             <h2 class="title">Registrarse</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Nombre de Usuario" />
+              <input id="usuarioRegistro" type="text" placeholder="Nombre de Usuario" />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <input id="emailRegistro" type="email" placeholder="Email" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Contraseña" />
+              <input id="contraseñaRegistro" type="password" placeholder="Contraseña" />
             </div>
-            <input type="submit" value="Sign Up" class="btn solid" />
+            <input id="btnRegistro" value="Sign Up" class="btn solid" />
 
             <p class="social-text">O registrarse usando redes sociales</p>
             <div class="social-media">
@@ -101,6 +101,20 @@
         </div>
       </div>
     </div>
+    <script>
+      const sign_in_btn = document.querySelector("#sign-in-btn");
+      const sign_up_btn = document.querySelector("#sign-up-btn");
+      const container = document.querySelector(".container");
+
+      sign_up_btn.addEventListener('click', () =>{
+          container.classList.add("sign-up-mode");
+      });
+
+      sign_in_btn.addEventListener('click', () =>{
+          container.classList.remove("sign-up-mode");
+      });
+      
+    </script>
     <script src="./js/local/index/index.js" type="module"></script>
   </body>
 </html>

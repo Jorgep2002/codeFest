@@ -9,6 +9,7 @@ export default class IndexModel {
   }
 
   registrar = async (user: usersInterface): Promise<void> => {
+    console.log(user, "usuario modelo")
     console.log("MODELO REGISTRO")
     try {
       const apiUrl = 'http://localhost:1802/users';
@@ -28,12 +29,13 @@ export default class IndexModel {
       }
     
       const responseData = await response.json(); 
-    
-      console.log('Respuesta del servidor:', responseData);
-    
+      alert(responseData.message)
+  
       return ;
     } catch (error) {
       console.error('Error:', error);
+      alert(error)
+
       throw error;
     }
   };
